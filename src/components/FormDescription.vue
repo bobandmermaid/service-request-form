@@ -8,8 +8,7 @@
       :minlength="min"
       :maxlength="max"
       @input="setDescription(message)"
-      >
-    </textarea>
+    ></textarea>
   </form-required-fields>
 </template>
 

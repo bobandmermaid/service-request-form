@@ -54,7 +54,7 @@ export default {
       }
     },
     // Отправялем заявку
-    async submit({dispatch, state}) {
+    async submit({ dispatch, state }) {
 
       const { office, topic, description, file } = state
 
