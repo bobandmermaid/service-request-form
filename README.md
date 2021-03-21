@@ -3,6 +3,10 @@
 ### Посмотреть
 + https://bobandmermaid.github.io/service-request-form/
 
++ При отправке запроса рандомно приходит ответ true или false
++ Если false выпадает сообщение “Ошибка отправки заявки”
++ Если true, попадаем на страницу "Заявка отправлена"
+
 ## Project setup
 ```
 npm install
