@@ -5,9 +5,7 @@
     <router-link
       to="/"
       exact
-      class="success__link">
-      Назад
-    </router-link>
+      class="success__link">Назад</router-link>
   </div>
 </template>
 

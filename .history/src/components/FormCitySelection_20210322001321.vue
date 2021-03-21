@@ -6,8 +6,7 @@
       v-model="selected"
       :disabled="picked"
       @change="setOffice(selectedCity)"
-      required
-      >
+      require>
       <option
         class="form-city__option"
         disabled

@@ -7,7 +7,7 @@
       exact
       class="success__link">
       Назад
-    </router-link>
+      </router-link>
   </div>
 </template>
 

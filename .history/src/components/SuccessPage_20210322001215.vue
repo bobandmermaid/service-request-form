@@ -3,11 +3,7 @@
     <h1 class="success__title">Заявка отправлена</h1>
     <img src="../assets/success_img.png" alt="Заявка отправлена.">
     <router-link
-      to="/"
-      exact
-      class="success__link">
-      Назад
-    </router-link>
+      to="/" exact class="success__link">Назад</router-link>
   </div>
 </template>
 

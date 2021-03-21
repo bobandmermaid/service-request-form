@@ -6,8 +6,7 @@
       to="/"
       exact
       class="success__link">
-      Назад
-    </router-link>
+      Назад</router-link>
   </div>
 </template>
 
