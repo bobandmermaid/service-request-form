@@ -36,6 +36,6 @@
 
 .button:disabled {
   background-color: #e0e0e0;
-  border: none;
+  border: #e0e0e0 solid 1px;
 }
 </style>

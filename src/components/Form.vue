@@ -1,5 +1,5 @@
 <template>
-  <form class="form" @submit.prevent="handleSubmit">
+  <form class="form" @submit.prevent="submit">
     <h1 class="form__title">Форма подачи заявки в отдел сервиса и качества</h1>
     <div class="form__content">
       <form-city-selection />
@@ -17,9 +17,10 @@ import FormTopicSelection from './FormTopicSelection'
 import FormDescription from './FormDescription'
 import FormDownloadFile from './FormDownloadFile'
 import Button from './ui/Button'
-import { mapGetters, mapMutations } from 'vuex'
+import { mapGetters, mapActions } from 'vuex'
 
   export default {
+    name: 'Form',
     components: {
       FormCitySelection,
       FormTopicSelection,
@@ -28,7 +29,7 @@ import { mapGetters, mapMutations } from 'vuex'
       Button
     },
     computed: mapGetters(['isComplete']),
-    methods: mapMutations(['handleSubmit'])
+    methods: mapActions(['submit'])
   }
 </script>
 

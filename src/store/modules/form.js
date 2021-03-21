@@ -1,15 +1,17 @@
 import * as api from '../../api/index'
+import router from '../../router'
 
 export default {
   state: {
     city: [],
     success: false,
-    office: '',
-    topic: '',
-    description: '',
+    office: null,
+    topic: null,
+    description: null,
     file: null
   },
   mutations: {
+    // Меняем стейты
     setCity(state, city) {
       state.city = city
     },
@@ -28,20 +30,9 @@ export default {
     setFile(state, file) {
       state.file = file
     },
-    async handleSubmit(state) {
-
-      const {office, topic, description, file} = this
-
-      await this.dispatch('sendData', { office, topic, description, file });
-
-      if(state.success) {
-        this.$router.push('/success');
-      } else {
-        alert('Ошибка отправки заявки');
-      }
-    }
   },
   actions: {
+    // Получение городов
     async getCity({ commit }) {
       try {
         const city = await api.getCity()
@@ -50,6 +41,7 @@ export default {
         console.log(err)
       }
     },
+    // Запрос к api на отправку данных
     async sendData({ commit }, data) {
       try {
         const res = await api.sendData(data)
@@ -60,12 +52,27 @@ export default {
       } catch (err) {
         console.log(err)
       }
-    }
+    },
+    // Отправялем заявку
+    async submit({dispatch, state}) {
+
+      const { office, topic, description, file } = state
+
+      await dispatch('sendData', { office, topic, description, file });
+
+      if(state.success) {
+        router.push('/success', () => {});
+      } else {
+        alert('Ошибка отправки заявки');
+      }
+    },
   },
   getters: {
+    // Забираем из стейта города и возвращаем как данные
     allCities(state) {
       return state.city
     },
+    // Активируем кнопку отправки заявки с случае заполненности обязательных полей
     isComplete(state) {
       return state.office && state.topic && state.description
     },

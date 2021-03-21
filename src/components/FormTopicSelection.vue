@@ -54,6 +54,8 @@
       class="form-text"
       type="text"
       placeholder="Другое"
+      :minlength="min"
+      :maxlength="max"
       v-model="text"
       ref="text"
       required
@@ -73,7 +75,9 @@ export default {
   data() {
     return {
       picked: false,
-      text: null
+      text: null,
+      min: 2,
+      max: 32
     }
   },
   computed: {
@@ -83,11 +87,12 @@ export default {
   },
   methods: {
     ...mapMutations(['setTopic']),
+    // Если в инпут ввести текст и после этого выбрать любой чекбокс, то текст в инпуте стирается.
     clearingInput() {
       this.text = null
       this.$refs.text.required = false
     },
-
+    // Если выбрать один из чекбоксов и после этого вписать в инпут хотя бы один символ, то выбор чекбокса снимается.
     unPickedRadio() {
       this.picked = false
       this.$refs.radio.required = false

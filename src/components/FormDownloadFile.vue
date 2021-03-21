@@ -24,12 +24,13 @@ import { mapMutations } from 'vuex'
       ...mapMutations(['setFile']),
       loadFile(event) {
         const input = event.target
-
+        // Объект позволяет веб-приложениям асинхронно читать содержимое файлов, хранящиеся на компьютере пользователя
         const reader = new FileReader();
-
+        // Запускается после завершения запроса
         reader.loadend = () => {
           this.setFile(reader.result)
         }
+        // Чтение содержимого из файла
         reader.readAsDataURL(input.files[0])
       }
     }

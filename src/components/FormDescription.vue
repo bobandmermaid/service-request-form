@@ -5,6 +5,8 @@
       name="description"
       v-model="message"
       placeholder="Введите текст"
+      :minlength="min"
+      :maxlength="max"
       @input="setDescription(message)"
       >
     </textarea>
@@ -21,7 +23,9 @@ import { mapMutations } from 'vuex'
     },
     data() {
       return {
-        message: null
+        message: null,
+        min: 2,
+        max: 320
       }
     },
     methods: mapMutations(['setDescription'])
