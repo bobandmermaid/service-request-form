@@ -81,6 +81,7 @@ export default {
     }
   },
   computed: {
+    // Пишем в стейт либо выбранную проблему, либо Другое
     topic() {
       return this.picked ? this.picked : this.text;
     },
