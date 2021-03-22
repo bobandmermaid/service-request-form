@@ -56,12 +56,16 @@ export default {
     // Отправялем заявку
     async submit({ dispatch, state }) {
 
-      const { office, topic, description, file } = state
+      const { office, topic, description, file } = state;
 
       await dispatch('sendData', { office, topic, description, file });
 
       if(state.success) {
         router.push('/success', () => {});
+        state.office = null;
+        state.topic = null;
+        state.description = null;
+        state.success = false;
       } else {
         alert('Ошибка отправки заявки');
       }

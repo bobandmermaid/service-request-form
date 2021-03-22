@@ -17,7 +17,7 @@ export const getResponseData = res => {
   }
 
   // Отправляем POST запрос
-  export const sendData = async ({office, topic, description, file}) => {
+  export const sendData = async ({ office, topic, description, file }) => {
     const res = await fetch(`${PROJECT_URL_V2}/send-form`, {
       method: "POST",
       body: JSON.stringify({

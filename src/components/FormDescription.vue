@@ -7,6 +7,7 @@
       placeholder="Введите текст"
       :minlength="min"
       :maxlength="max"
+      required
       @input="setDescription(message)"
     ></textarea>
   </form-required-fields>
