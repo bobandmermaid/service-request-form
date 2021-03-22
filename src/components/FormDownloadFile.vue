@@ -22,6 +22,7 @@ import { mapMutations } from 'vuex'
     },
     methods: {
       ...mapMutations(['setFile']),
+      // Обрабатываем файл
       loadFile(event) {
         const input = event.target
         // Объект позволяет веб-приложениям асинхронно читать содержимое файлов, хранящиеся на компьютере пользователя

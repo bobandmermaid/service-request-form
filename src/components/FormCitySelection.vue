@@ -55,8 +55,8 @@ import { mapGetters, mapActions, mapMutations } from 'vuex'
     },
   computed: {
     ...mapGetters(['allCities']),
-    // Если выбран чекбокс “Онлайн”, то селект с городами и приобретает статус disabled.
     selectedCity() {
+      // Пишем в стейт либо Онлайн, либо выбранный город
       return this.picked ? 'online' : this.selected;
     }
   },
