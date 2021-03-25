@@ -6,7 +6,7 @@
       <form-topic-selection />
       <form-description />
       <form-download-file />
-      <Button :isComplete="isComplete"/>
+      <Button />
     </div>
   </form>
 </template>
@@ -17,7 +17,7 @@ import FormTopicSelection from './FormTopicSelection'
 import FormDescription from './FormDescription'
 import FormDownloadFile from './FormDownloadFile'
 import Button from './ui/Button'
-import { mapGetters, mapActions } from 'vuex'
+import { mapActions } from 'vuex'
 
   export default {
     name: 'Form',
@@ -28,7 +28,6 @@ import { mapGetters, mapActions } from 'vuex'
       FormDownloadFile,
       Button
     },
-    computed: mapGetters(['isComplete']),
     methods: mapActions(['submit'])
   }
 </script>

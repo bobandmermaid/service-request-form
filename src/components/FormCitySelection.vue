@@ -53,6 +53,7 @@ import { mapGetters, mapActions, mapMutations } from 'vuex'
   async mounted() {
       this.getCity();
     },
+    // Вычисляемые свойства, которые кэшируются, основываясь на своих реактивных зависимостях
   computed: {
     ...mapGetters(['allCities']),
     selectedCity() {
@@ -60,6 +61,7 @@ import { mapGetters, mapActions, mapMutations } from 'vuex'
       return this.picked ? 'online' : this.selected;
     }
   },
+  // Метод запускает функцию при каждом обращении
   methods: {
     ...mapActions(['getCity']),
     ...mapMutations(['setOffice']),
