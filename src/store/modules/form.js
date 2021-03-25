@@ -31,11 +31,13 @@ export default {
       state.file = file
     },
   },
+  // Действия инициируют мутации. Для асинхронных операций
   actions: {
     // Получение городов
     async getCity({ commit }) {
       try {
         const city = await api.getCity()
+        // Запуск мутации
         commit('setCity', city)
       } catch (err) {
         console.log(err)
@@ -57,7 +59,7 @@ export default {
     async submit({ dispatch, state }) {
 
       const { office, topic, description, file } = state;
-
+      // Запуск действия
       await dispatch('sendData', { office, topic, description, file });
 
       if(state.success) {
@@ -71,6 +73,7 @@ export default {
       }
     },
   },
+  // Вычисляемые свойства хранилища
   getters: {
     // Забираем из стейта города и возвращаем как данные
     allCities(state) {

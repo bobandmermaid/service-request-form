@@ -3,10 +3,10 @@
 </template>
 
 <script>
+import { mapGetters } from 'vuex'
+
   export default {
-    props: {
-      isComplete: String
-    }
+    computed: mapGetters(['isComplete']),
   }
 </script>
 

@@ -7,7 +7,7 @@
         class="form-file__input"
         type="file"
         @change="loadFile($event)"
-        >
+      >
     </div>
   </form-required-fields>
 </template>
