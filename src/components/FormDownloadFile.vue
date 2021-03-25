@@ -28,7 +28,7 @@ import { mapMutations } from 'vuex'
         // Объект позволяет веб-приложениям асинхронно читать содержимое файлов, хранящиеся на компьютере пользователя
         const reader = new FileReader();
         // Запускается после завершения запроса
-        reader.loadend = () => {
+        reader.onloadend = () => {
           this.setFile(reader.result)
         }
         // Чтение содержимого из файла

@@ -20,7 +20,7 @@ import Button from './ui/Button'
 import { mapActions } from 'vuex'
 
   export default {
-    name: 'Form',
+    name: 'FormServiceRequest',
     components: {
       FormCitySelection,
       FormTopicSelection,

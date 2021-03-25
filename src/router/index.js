@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import Form from '../components/Form'
+import FormServiceRequest from '../components/FormServiceRequest'
 
 Vue.use(VueRouter)
 
@@ -8,8 +8,8 @@ Vue.use(VueRouter)
 const routes = [
   {
     path: '/',
-    name: 'Form',
-    component: Form
+    name: 'FormServiceRequest',
+    component: FormServiceRequest
   },
   {
     path: '/success',
